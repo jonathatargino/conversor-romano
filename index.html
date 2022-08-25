@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Romano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="structure">
+        <div class="conversor">
+            <h2>Conversor Romano</h2>
+            <div class="conversor-body">
+                <nav>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="arabicToRoman" name="convert-option" checked>
+                            <label for="arabicToRoman">Árabe para Romano</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="romanToArabic" name="convert-option">
+                            <label for="romanToArabic">Romano para Árabe</label>
+                        </div>
+                    </div>
+                    <div class="input-div">
+                        <input type="text" id="input" placeholder="insira seu número árabe">
+                    </div>
+                    <div class="buttons">
+                        <div class="button-div">
+                            <button type="button" id="convert">Converter</button>
+                        </div>
+                        <div class="button-div">
+                            <button type="button" id="clear">Limpar</button>
+                        </div>
+                    </div>
+                    <div class="output-container">
+                        <div>
+                            <label for="output">Resposta:</label>
+                            <p id="output">XXII = 22</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
