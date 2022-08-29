@@ -6,45 +6,7 @@ const output = document.querySelector("#output")
 const clearBtn = document.querySelector("#clear")
 var operation = 'arabictoRoman'
 
-toArabicRadio.addEventListener("click", (event) => {
-    input.placeholder = "insira seu número romano";
-    operation = 'romanToArabic'
-    clear()
-})
-
-toRomanRadio.addEventListener("click", (event) => {
-    input.placeholder = "insira seu número árabe";
-    operation = 'arabictoRoman'
-    clear()
-})
-
-convertBtn.addEventListener("click", (event) => {
-    switch(operation){
-        case 'arabictoRoman':
-            let arabicOutput = convertToRoman(input.value);
-            if(input.value >= 4000){
-                output.innerHTML = `${arabicOutput}`;
-            }else{
-                output.innerHTML = `${input.value} = ${arabicOutput}`;
-            }
-            break;
-        case 'romanToArabic':
-            let romanOutput = convertToArabic(input.value);
-            output.innerHTML = `${input.value.toUpperCase()} = ${romanOutput}`
-            break;
-    }
-})
-
-const clear = function() {
-    input.value = ''
-}
-
-clearBtn.addEventListener("click", (event) => { 
-    clear()
-})
-
-
-
+/* Funções de conversão */
 
 function convertToRoman(num) {
     let char1 = ''
@@ -196,7 +158,49 @@ function convertToArabic(romanNum){
             arabic -= romans[arrayRomans[i]]
         };
     };
-
-    return arabic;
+    if(convertToRoman(arabic) === upperCaseNum){
+        return arabic;
+    }
+    return 'Este número romano está incorreto';
 }
 
+/* Limpar input*/
+
+const clear = function() {
+    input.value = ''
+}
+
+/* EventListener dos botões */
+
+toArabicRadio.addEventListener("click", (event) => {
+    input.placeholder = "insira seu número romano";
+    operation = 'romanToArabic'
+    clear()
+})
+
+toRomanRadio.addEventListener("click", (event) => {
+    input.placeholder = "insira seu número árabe";
+    operation = 'arabictoRoman'
+    clear()
+})
+
+convertBtn.addEventListener("click", (event) => {
+    switch(operation){
+        case 'arabictoRoman':
+            let arabicOutput = convertToRoman(input.value);
+            if(input.value >= 4000){
+                output.innerHTML = `${arabicOutput}`;
+            }else{
+                output.innerHTML = `${input.value} = ${arabicOutput}`;
+            }
+            break;
+        case 'romanToArabic':
+            let romanOutput = convertToArabic(input.value);
+            output.innerHTML = `${input.value.toUpperCase()} = ${romanOutput}`
+            break;
+    }
+})
+
+clearBtn.addEventListener("click", (event) => { 
+    clear()
+})
