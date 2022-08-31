@@ -3,7 +3,7 @@
 # conversor-romano
 
 ## Sobre o Projeto
-User Identifier é um projeto com tela de cadastro que utiliza do localStorage para identificar se o usuário já está cadastrado, e, se for o caso, ele não vai ver a tela de cadastro. Ao invés disso, o usuário entrará na tela de boas vindas.
+O projeto é um conversor romano que converte dos números árabes para os decimais e vice-versa, apontando se o número romano estiver escrito de forma errada.
 
 ## 🎨 Layout
 
